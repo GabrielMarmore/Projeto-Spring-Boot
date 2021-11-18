@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{css/main.css}">
+<script th:src="@{js/teste.js}">
+</script>
+<title>Página principal</title>
+</head>
+<body>
+   <h1>Titulo</h1>
+   <ul>
+    <li>
+       <a th:href="@{/teste}">Teste</a>
+    </li>
+    <li>
+       <a th:href="@{/outro}">Outro</a>
+    </li>
+   </ul>
+   <button th:onclick="ola()">ok</button>
+</body>
+</html>
