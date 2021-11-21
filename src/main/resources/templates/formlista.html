@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-   <title>Lista Clientes</title>
+   <title>Lista Alunos</title>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
@@ -16,7 +16,7 @@
      </tr>
      </thead>
      <tbody>
-     <tr th:each="cli : ${clientes}">
+     <tr th:each="cli : ${Alunos}">
      <td th:text="${cli.id}"></td>
      <td th:text="${cli.nome}"></td>
      <td th:text="${cli.cpf}"></td>
@@ -30,9 +30,9 @@
      <input type="submit" value="X">     
      </form>
      </td>
-     </tr>
-                            
+     </tr>                
      </tbody>
      </table>
+     <div><a th:href="@{/Aluno}">Cadastrar Aluno</a></div>
 </body>
 </html>
