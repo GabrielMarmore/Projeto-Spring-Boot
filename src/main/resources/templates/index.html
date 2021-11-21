@@ -8,15 +8,24 @@
 <title>Página principal</title>
 </head>
 <body>
-   <h1>Titulo</h1>
-   <ul>
-    <li>
-       <a th:href="@{/teste}">Teste</a>
-    </li>
-    <li>
-       <a th:href="@{/outro}">Outro</a>
-    </li>
-   </ul>
-   <button th:onclick="ola()">ok</button>
+	<header>
+        <h1>Projeto Captação de Alunos</h1>
+        <nav>
+            <ul>
+				<li><a th:href="@{/clientes}">Alunos</a></li>
+   				<li><a th:href="@{/teste}">Professores</a></li>
+   				<li><a th:href="@{/teste}">Funcionarios</a></li>
+   				<li><a th:href="@{/teste}">Escolas</a></li>
+   			</ul>
+        </nav>
+    </header>
+  <h2>Acesso Tabelas</h2>
+  <ul>
+   <li><a th:href="@{/clientes}">Alunos</a></li>
+   <li><a th:href="@{/teste}">Professores</a></li>
+   <li><a th:href="@{/teste}">Funcionarios</a></li>
+   <li><a th:href="@{/teste}">Escolas</a></li>
+  </ul>
+  
 </body>
 </html>
