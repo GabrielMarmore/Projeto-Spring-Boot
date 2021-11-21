@@ -1,15 +1,15 @@
 package com.projeto.ProjetoIDS001.model;
 
-public class Cliente {
+public class Aluno {
 	
 	private int id;
 	private String nome, cpf;
 	
-	public Cliente() {
+	public Aluno() {
 		
 	}
     
-	public Cliente(int id, String nome, String cpf) {
+	public Aluno(int id, String nome, String cpf) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;

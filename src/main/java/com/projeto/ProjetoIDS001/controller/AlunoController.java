@@ -13,35 +13,35 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.projeto.ProjetoIDS001.model.Cliente;
-import com.projeto.ProjetoIDS001.model.ClienteService;
+import com.projeto.ProjetoIDS001.model.Aluno;
+import com.projeto.ProjetoIDS001.model.AlunoService;
 
 @Controller
 @ComponentScan("com.projeto.ProjetoIDS001.model")
-public class ClienteController {
+public class AlunoController {
 	
 	@Autowired
 	private ApplicationContext context;
 
-	@GetMapping("/cliente")
-	public String formCliente(Model model) {
-		model.addAttribute("cliente",new Cliente());
-		return "formcliente";
+	@GetMapping("/aluno")
+	public String formAluno(Model model) {
+		model.addAttribute("aluno",new Aluno());
+		return "formaluno";
 	}
 	
-	@PostMapping("/cliente")
-	public String postCliente(@ModelAttribute Cliente cli,
+	@PostMapping("/aluno")
+	public String postAluno(@ModelAttribute Aluno cli,
 			Model model) {
-		ClienteService cs = context.getBean(ClienteService.class);
-				cs.inserirCliente(cli);
+		AlunoService cs = context.getBean(AlunoService.class);
+				cs.inserirAluno(cli);
 		        return "sucesso";
 	}
 	
 	@GetMapping("/perfil/{id}")
 	public String getPerfil(@PathVariable("id") int id, 
 			Model model) {
-		ClienteService cs = context.getBean(ClienteService.class);
-		Map<String, Object> mapa = cs.getCliente(id);
+		AlunoService cs = context.getBean(AlunoService.class);
+		Map<String, Object> mapa = cs.getAluno(id);
 		model.addAttribute("nome", mapa.get("nome"));
 		model.addAttribute("cpf", mapa.get("cpf"));
 		model.addAttribute("id", id);
@@ -49,11 +49,11 @@ public class ClienteController {
 		
 	}
 	
-	@GetMapping("/clientes")
+	@GetMapping("/alunos")
 	public String listar(Model model) {
-		ClienteService cdao = context.getBean(ClienteService.class);
-	    List<Map<String, Object>> clientes = cdao.getClientes();
-	    model.addAttribute("clientes", clientes);
+		AlunoService cdao = context.getBean(AlunoService.class);
+	    List<Map<String, Object>> alunos = cdao.getAlunos();
+	    model.addAttribute("alunos", alunos);
 		return "formlista";
 	}
 	

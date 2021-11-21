@@ -16,7 +16,7 @@
      </tr>
      </thead>
      <tbody>
-     <tr th:each="cli : ${Alunos}">
+     <tr th:each="cli : ${alunos}">
      <td th:text="${cli.id}"></td>
      <td th:text="${cli.nome}"></td>
      <td th:text="${cli.cpf}"></td>
@@ -33,6 +33,6 @@
      </tr>                
      </tbody>
      </table>
-     <div><a th:href="@{/Aluno}">Cadastrar Aluno</a></div>
+     <div><a th:href="@{/aluno}">Cadastrar Aluno</a></div>
 </body>
 </html>

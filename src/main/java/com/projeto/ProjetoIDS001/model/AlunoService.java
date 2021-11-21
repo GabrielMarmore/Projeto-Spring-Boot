@@ -7,20 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClienteService {
+public class AlunoService {
 	
 	@Autowired
-	ClienteDAO cdao;
+	AlunoDAO cdao;
 	
-	public void inserirCliente(Cliente c) {
-		cdao.inserirCliente(c);
+	public void inserirAluno(Aluno c) {
+		cdao.inserirAluno(c);
 	}
 	
-	public Map<String, Object> getCliente(int id) {
-		return cdao.getCliente(id);
+	public Map<String, Object> getAluno(int id) {
+		return cdao.getAluno(id);
 	}
 	
-	public List<Map<String, Object>> getClientes(){
-		return cdao.getClientes();
+	public List<Map<String, Object>> getAlunos(){
+		return cdao.getAlunos();
 	}
 }

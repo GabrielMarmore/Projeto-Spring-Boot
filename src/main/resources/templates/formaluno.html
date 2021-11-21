@@ -5,11 +5,11 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-     <form action="#" th:action="@{/Aluno}" method=post th:object="${Aluno}">
+     <form action="#" th:action="@{/aluno}" method=post th:object="${aluno}">
        Nome: <input type="text" th:field="*{nome}"><br>
        CPF: <input type="text" th:field="*{cpf}">
        <input type="submit" value="Cadastrar">
      </form>
-     <div><a th:href="@{/Alunos}">Voltar</a></div>
+     <div><a th:href="@{/alunos}">Voltar</a></div>
  </body>
  </html>

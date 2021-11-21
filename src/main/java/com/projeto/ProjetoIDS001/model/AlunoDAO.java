@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ClienteDAO {
+public class AlunoDAO {
 	
 	@Autowired
 	DataSource dataSource;
@@ -22,28 +22,28 @@ public class ClienteDAO {
 		jdbc = new JdbcTemplate(dataSource);
 	}
 
-	public void inserirCliente(Cliente cliente) {
-		String sql = "INSERT INTO cliente(nome,cpf)" +
+	public void inserirAluno(Aluno aluno) {
+		String sql = "INSERT INTO aluno(nome,cpf)" +
 	                 " VALUES (?,?)";
 		Object[] obj = new Object[2];
 		//primeiro ?
-		obj[0] = cliente.getNome();
+		obj[0] = aluno.getNome();
 		//segundo ?
-		obj[1] = cliente.getCpf();
+		obj[1] = aluno.getCpf();
 		jdbc.update(sql, obj);
 	}
 	
-	public Map<String, Object> getCliente(int id) {
-		String sql = "SELECT * FROM cliente WHERE cliente.id = ?";
+	public Map<String, Object> getAluno(int id) {
+		String sql = "SELECT * FROM aluno WHERE aluno.id = ?";
 		Object[] obj = new Object[1];
 		obj[0] = id;
 		return jdbc.queryForMap(sql,obj);		
 	}
 	
-	public List<Map<String, Object>> getClientes() {
-		String sql = "SELECT * FROM cliente";
-		List<Map<String, Object>> clientes = (List<Map<String, Object>>)jdbc.queryForList(sql);
-		return clientes;
+	public List<Map<String, Object>> getAlunos() {
+		String sql = "SELECT * FROM aluno";
+		List<Map<String, Object>> alunos = (List<Map<String, Object>>)jdbc.queryForList(sql);
+		return alunos;
 	}
 }
 
