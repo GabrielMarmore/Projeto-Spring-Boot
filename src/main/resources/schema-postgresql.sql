@@ -15,3 +15,9 @@ CREATE TABLE IF NOT EXISTS funcionario (
      nome  varchar(50),
      cpf   varchar(11)
 );
+
+CREATE TABLE IF NOT EXISTS escola (
+     id serial PRIMARY KEY,
+     nome  varchar(50),
+     codigo   varchar(6)
+);

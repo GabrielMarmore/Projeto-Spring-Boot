@@ -6,7 +6,7 @@
 </head>
 <body>
      <form action="#" th:action="@{/aluno}" method=post th:object="${aluno}">
-       Nome: <input type="text" th:field="*{nome}"><br>
+       Nome do aluno: <input type="text" th:field="*{nome}"><br>
        CPF: <input type="text" th:field="*{cpf}">
        <input type="submit" value="Cadastrar">
      </form>
