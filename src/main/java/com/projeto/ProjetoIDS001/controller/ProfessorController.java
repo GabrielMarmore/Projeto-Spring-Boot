@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import com.projeto.ProjetoIDS001.model.Professor;
 import com.projeto.ProjetoIDS001.model.ProfessorService;
 
@@ -57,4 +56,32 @@ public class ProfessorController {
 		return "formlistaprof";
 	}
 	
+	@PostMapping("/apagar/professor/{id}")
+	public String apagarProfessor(@PathVariable("id") int id) {
+		ProfessorService cdao = context.getBean(ProfessorService.class);
+		cdao.deleteProfessor(id);
+		return "redirect:/professores";
+	}
+	
+	@GetMapping("/updprof/{id}")
+	public String formAtualizar(@PathVariable("id") int id, Model model) {
+		ProfessorService cdao = context.getBean(ProfessorService.class);
+		Map<String,Object> regs = cdao.getProfessor(id);
+		Professor cli = new Professor(id,regs.get("nome").toString(),regs.get("cpf").toString());
+		model.addAttribute("professor",cli);
+		model.addAttribute("id",id);
+		return "formupdprofessor";
+	}
+	
+	@PostMapping("/updprof/{id}")
+	public String atualizarProfessor(@PathVariable("id") int id, 
+			                       Model model,
+			                       @ModelAttribute Professor cli) {
+		ProfessorService cdao = context.getBean(ProfessorService.class);
+		cdao.atualizarProfessor(id, cli);
+		return "redirect:/professores";
+	}
+	
 }
+
+	

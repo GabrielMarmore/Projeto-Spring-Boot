@@ -21,12 +21,12 @@
      <td th:text="${cli.nome}"></td>
      <td th:text="${cli.cpf}"></td>
      <td>
-     <a th:href="@{'upd/' + ${cli.id}}">
+     <a th:href="@{'updprof/' + ${cli.id}}">
      Editar
      </a>
      </td>
      <td>
-     <form th:action="@{'apagar/' + ${cli.id}}" method=POST>
+     <form th:action="@{'apagar/professor/' + ${cli.id}}" method=POST>
      <input type="submit" value="X">     
      </form>
      </td>

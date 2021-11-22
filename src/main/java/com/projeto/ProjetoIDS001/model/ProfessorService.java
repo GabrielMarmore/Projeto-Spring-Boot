@@ -23,4 +23,12 @@ public class ProfessorService {
 	public List<Map<String, Object>> getProfessores(){
 		return cdao.getProfessores();
 	}
+	
+	public void deleteProfessor(int id) {
+		cdao.deleteProfessor(id);
+	}
+	
+	public void atualizarProfessor(int id, Professor c){
+		cdao.atualizarProfessor(id, c);
+	}
 }
