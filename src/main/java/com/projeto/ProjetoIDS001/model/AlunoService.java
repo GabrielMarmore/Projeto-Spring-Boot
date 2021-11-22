@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class AlunoService {
 	
@@ -22,5 +23,13 @@ public class AlunoService {
 	
 	public List<Map<String, Object>> getAlunos(){
 		return cdao.getAlunos();
+	}
+	
+	public void deleteAluno(int id) {
+		cdao.deleteAluno(id);
+	}
+	
+	public void atualizarAluno(int id, Aluno c){
+		cdao.atualizarAluno(id, c);
 	}
 }

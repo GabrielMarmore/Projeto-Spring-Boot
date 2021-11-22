@@ -45,6 +45,26 @@ public class AlunoDAO {
 		List<Map<String, Object>> alunos = (List<Map<String, Object>>)jdbc.queryForList(sql);
 		return alunos;
 	}
+	
+	public void deleteAluno(int id) {
+        String sql = "DELETE FROM aluno WHERE id = ?" ;
+        Object[] obj = new Object[1];
+        obj[0] = id;
+        jdbc.update(sql,obj);
+    }
+    
+    public void atualizarAluno(int id, Aluno aluno) {
+		String sql = "UPDATE aluno "
+				+    "SET nome = ?, cpf = ? "
+				+    "WHERE id = ?" ;
+		Object[] obj = new Object[3];
+		//primeiro ?
+		obj[0] = aluno.getNome();
+		//segundo ?
+		obj[1] = aluno.getCpf();
+		obj[2] = id;
+		jdbc.update(sql, obj);
+	}
 }
 
 

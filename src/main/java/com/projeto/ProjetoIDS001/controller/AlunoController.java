@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import com.projeto.ProjetoIDS001.model.Aluno;
 import com.projeto.ProjetoIDS001.model.AlunoService;
 
@@ -57,4 +56,34 @@ public class AlunoController {
 		return "formlista";
 	}
 	
+	@PostMapping("/apagar/aluno/{id}")
+	public String apagarAluno(@PathVariable("id") int id) {
+		AlunoService cdao = context.getBean(AlunoService.class);
+		cdao.deleteAluno(id);
+		return "redirect:/alunos";
+	}
+	
+	@GetMapping("/upd/{id}")
+	public String formAtualizar(@PathVariable("id") int id, Model model) {
+		AlunoService cdao = context.getBean(AlunoService.class);
+		Map<String,Object> regs = cdao.getAluno(id);
+		Aluno cli = new Aluno(id,regs.get("nome").toString(),regs.get("cpf").toString());
+		model.addAttribute("aluno",cli);
+		model.addAttribute("id",id);
+		return "formupdaluno";
+	}
+	
+	@PostMapping("/upd/{id}")
+	public String atualizarAluno(@PathVariable("id") int id, 
+			                       Model model,
+			                       @ModelAttribute Aluno cli) {
+		AlunoService cdao = context.getBean(AlunoService.class);
+		cdao.atualizarAluno(id, cli);
+		return "redirect:/alunos";
+	}
+	
 }
+
+
+
+
