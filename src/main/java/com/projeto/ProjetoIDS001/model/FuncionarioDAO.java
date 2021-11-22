@@ -45,4 +45,24 @@ public class FuncionarioDAO {
 		List<Map<String, Object>> funcionarios = (List<Map<String, Object>>)jdbc.queryForList(sql);
 		return funcionarios;
 	}
+	
+	public void deleteFuncionario(int id) {
+        String sql = "DELETE FROM funcionario WHERE id = ?" ;
+        Object[] obj = new Object[1];
+        obj[0] = id;
+        jdbc.update(sql,obj);
+    }
+    
+    public void atualizarFuncionario(int id, Funcionario funcionario) {
+		String sql = "UPDATE funcionario "
+				+    "SET nome = ?, cpf = ? "
+				+    "WHERE id = ?" ;
+		Object[] obj = new Object[3];
+		//primeiro ?
+		obj[0] = funcionario.getNome();
+		//segundo ?
+		obj[1] = funcionario.getCpf();
+		obj[2] = id;
+		jdbc.update(sql, obj);
+	}
 }

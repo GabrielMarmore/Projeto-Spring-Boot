@@ -23,4 +23,12 @@ public class FuncionarioService {
 	public List<Map<String, Object>> getFuncionarios(){
 		return cdao.getFuncionarios();
 	}
+	
+	public void deleteFuncionario(int id) {
+		cdao.deleteFuncionario(id);
+	}
+	
+	public void atualizarFuncionario(int id, Funcionario c){
+		cdao.atualizarFuncionario(id, c);
+	}
 }

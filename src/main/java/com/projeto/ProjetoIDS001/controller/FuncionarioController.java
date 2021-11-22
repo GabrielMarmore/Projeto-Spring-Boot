@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import com.projeto.ProjetoIDS001.model.Funcionario;
 import com.projeto.ProjetoIDS001.model.FuncionarioService;
 
@@ -57,4 +56,33 @@ public class FuncionarioController {
 		return "formlistafunc";
 	}
 	
+	@PostMapping("/apagar/funcionario/{id}")
+	public String apagarFuncionario(@PathVariable("id") int id) {
+		FuncionarioService cdao = context.getBean(FuncionarioService.class);
+		cdao.deleteFuncionario(id);
+		return "redirect:/funcionarios";
+	}
+	
+	@GetMapping("/updfunc/{id}")
+	public String formAtualizar(@PathVariable("id") int id, Model model) {
+		FuncionarioService cdao = context.getBean(FuncionarioService.class);
+		Map<String,Object> regs = cdao.getFuncionario(id);
+		Funcionario cli = new Funcionario(id,regs.get("nome").toString(),regs.get("cpf").toString());
+		model.addAttribute("funcionario",cli);
+		model.addAttribute("id",id);
+		return "formupdfuncionario";
+	}
+	
+	@PostMapping("/updfunc/{id}")
+	public String atualizarFuncionario(@PathVariable("id") int id, 
+			                       Model model,
+			                       @ModelAttribute Funcionario cli) {
+		FuncionarioService cdao = context.getBean(FuncionarioService.class);
+		cdao.atualizarFuncionario(id, cli);
+		return "redirect:/funcionarios";
+	}
+	
 }
+
+	
+
