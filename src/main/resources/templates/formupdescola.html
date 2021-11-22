@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Atualização de escolas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="#" th:action="@{'/updescola/' + ${id}}" method=post th:object="${escola}">
+    	Nome: <input type="text" th:field="*{nome}"><br>
+    	CODIGO: <input type="text" th:field="*{codigo}">
+    	<input type="submit" value="Editar">
+    </form>
+</body>
+</html>

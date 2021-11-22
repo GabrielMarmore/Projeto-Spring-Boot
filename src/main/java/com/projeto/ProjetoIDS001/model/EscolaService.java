@@ -23,4 +23,12 @@ public class EscolaService {
 	public List<Map<String, Object>> getEscolas(){
 		return cdao.getEscolas();
 	}
+	
+	public void deleteEscola(int id) {
+		cdao.deleteEscola(id);
+	}
+	
+	public void atualizarEscola(int id, Escola c){
+		cdao.atualizarEscola(id, c);
+	}
 }

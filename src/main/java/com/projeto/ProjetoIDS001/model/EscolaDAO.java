@@ -45,4 +45,24 @@ public class EscolaDAO {
 		List<Map<String, Object>> escolas = (List<Map<String, Object>>)jdbc.queryForList(sql);
 		return escolas;
 	}
+	
+	public void deleteEscola(int id) {
+        String sql = "DELETE FROM escola WHERE id = ?" ;
+        Object[] obj = new Object[1];
+        obj[0] = id;
+        jdbc.update(sql,obj);
+    }
+    
+    public void atualizarEscola(int id, Escola escola) {
+		String sql = "UPDATE escola "
+				+    "SET nome = ?, codigo = ? "
+				+    "WHERE id = ?" ;
+		Object[] obj = new Object[3];
+		//primeiro ?
+		obj[0] = escola.getNome();
+		//segundo ?
+		obj[1] = escola.getCodigo();
+		obj[2] = id;
+		jdbc.update(sql, obj);
+	}
 }
