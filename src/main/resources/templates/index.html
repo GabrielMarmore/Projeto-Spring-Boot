@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" th:href="@{css/main.css}">
-<script th:src="@{js/teste.js}">
+<script th:src="@{js/main.js}">
 </script>
 <title>Página principal</title>
 </head>
 <body>
 	<header class="container">
-        <h1>Projeto Captação de Alunos</h1>
-        <nav>
-            <ul id="menu">
-				<li><a th:href="@{/alunos}">Alunos</a></li>
-   				<li><a th:href="@{/professores}">Professores</a></li>
-   				<li><a th:href="@{/funcionarios}">Funcionários</a></li>
-   				<li><a th:href="@{/escolas}">Escolas</a></li>
-   			</ul>
-        </nav>
-    </header>
+    <a th:href="@{/}"><h1>Projeto Captação de Alunos</h1></a>
+    <nav>
+        <ul id="menu">
+			<li><a th:href="@{/alunos}">Alunos</a></li>
+			<li><a th:href="@{/professores}">Professores</a></li>
+			<li><a th:href="@{/funcionarios}">Funcionários</a></li>
+			<li><a th:href="@{/escolas}">Escolas</a></li>
+		</ul>
+    </nav>
+</header>
 <main id="index">
 	<div>
   		<h2>Acesso Tabelas</h2>
