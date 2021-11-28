@@ -3,11 +3,12 @@
 <head>
     <title>Atualização de escolas</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script th:src="@{js/main.js}"></script>
 </head>
 <body>
-    <form action="#" th:action="@{'/updescola/' + ${id}}" method=post th:object="${escola}">
-    	Nome: <input type="text" th:field="*{nome}"><br>
-    	Código da escola: <input type="text" th:field="*{codigo}">
+    <form onsubmit="return validaForm(this)" action="#" th:action="@{'/updescola/' + ${id}}" method=post th:object="${escola}">
+    	Nome: <input id="nome" type="text" th:field="*{nome}"><br>
+    	Código da escola: <input id="cdcolegio" type="text" th:field="*{codigo}">
     	<input type="submit" value="Editar">
     </form>
 </body>

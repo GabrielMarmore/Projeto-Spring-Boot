@@ -3,12 +3,13 @@
 <head>
    <title>Cadastro de Funcionários</title>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <script th:src="@{js/main.js}"></script>
 </head>
 <body>
-     <form action="#" th:action="@{/funcionario}" method=post th:object="${funcionario}">
-       Nome: <input type="text" th:field="*{nome}"><br>
-       CPF: <input type="text" th:field="*{cpf}"><br>
-       Código do Colégio: <input type="text" th:field="*{colegio}">
+     <form onsubmit="return validaForm(this)" action="#" th:action="@{/funcionario}" method=post th:object="${funcionario}">
+       Nome: <input id="nome" type="text" th:field="*{nome}"><br>
+       CPF: <input id="cpf" type="text" th:field="*{cpf}"><br>
+       Código do Colégio: <input id="cdcolegio" type="text" th:field="*{colegio}">
        <input type="submit" value="Cadastrar">
      </form>
      <div><a th:href="@{/funcionarios}">Voltar</a></div>
