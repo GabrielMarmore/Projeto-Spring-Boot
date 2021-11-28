@@ -3,8 +3,20 @@
 <head>
     <title>Atualização de alunos</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 <body>
+<header class="container">
+    <a th:href="@{/}"><h1>Projeto Captação de Alunos</h1></a>
+    <nav>
+        <ul id="menu">
+			<li><a th:href="@{/alunos}">Alunos</a></li>
+			<li><a th:href="@{/professores}">Professores</a></li>
+			<li><a th:href="@{/funcionarios}">Funcionários</a></li>
+			<li><a th:href="@{/escolas}">Escolas</a></li>
+		</ul>
+    </nav>
+</header>
     <form action="#" th:action="@{'/upd/' + ${id}}" method=post th:object="${aluno}">
     	Nome: <input type="text" th:field="*{nome}"><br>
     	CPF: <input type="text" th:field="*{cpf}"><br>
@@ -12,5 +24,9 @@
     	E-mail: <input type="text" th:field="*{email}">
     	<input type="submit" value="Editar">
     </form>
+<footer>
+	<p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
+    <p><a href="https://github.com/WilsonIglesias" target="_blank">@Wilson</a></p>
+</footer>
 </body>
 </html>
