@@ -3,16 +3,18 @@ package com.projeto.ProjetoIDS001.model;
 public class Aluno {
 	
 	private int id;
-	private String nome, cpf;
+	private String nome, cpf, colegio, email;
 	
 	public Aluno() {
 		
 	}
     
-	public Aluno(int id, String nome, String cpf) {
+	public Aluno(int id, String nome, String cpf, String colegio, String email) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
+		this.colegio = colegio;
+		this.email = email;
 	}
 	
 	public int getId() {
@@ -37,5 +39,21 @@ public class Aluno {
 
     public void setCpf(String cpf) {
     	this.cpf = cpf;
+    }
+    
+    public String getColegio() {
+    	return colegio;
+    }
+
+    public void setColegio(String colegio) {
+    	this.colegio = colegio;
+    }
+    
+    public String getEmail() {
+    	return email;
+    }
+
+    public void setEmail(String email) {
+    	this.email = email;
     }
 }

@@ -7,7 +7,7 @@
 <body>
     <form action="#" th:action="@{'/updescola/' + ${id}}" method=post th:object="${escola}">
     	Nome: <input type="text" th:field="*{nome}"><br>
-    	CODIGO: <input type="text" th:field="*{codigo}">
+    	Código da escola: <input type="text" th:field="*{codigo}">
     	<input type="submit" value="Editar">
     </form>
 </body>

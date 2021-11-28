@@ -23,13 +23,17 @@ public class AlunoDAO {
 	}
 
 	public void inserirAluno(Aluno aluno) {
-		String sql = "INSERT INTO aluno(nome,cpf)" +
-	                 " VALUES (?,?)";
-		Object[] obj = new Object[2];
+		String sql = "INSERT INTO aluno(nome,cpf,colegio,email)" +
+	                 " VALUES (?,?,?,?)";
+		Object[] obj = new Object[4];
 		//primeiro ?
 		obj[0] = aluno.getNome();
 		//segundo ?
 		obj[1] = aluno.getCpf();
+		//terceiro ?
+		obj[2] = aluno.getColegio();
+		//quarto ?
+		obj[3] = aluno.getEmail();
 		jdbc.update(sql, obj);
 	}
 	
@@ -55,14 +59,19 @@ public class AlunoDAO {
     
     public void atualizarAluno(int id, Aluno aluno) {
 		String sql = "UPDATE aluno "
-				+    "SET nome = ?, cpf = ? "
+				+    "SET nome = ?, cpf = ?, colegio = ?, email = ?"
 				+    "WHERE id = ?" ;
-		Object[] obj = new Object[3];
+		Object[] obj = new Object[5];
 		//primeiro ?
 		obj[0] = aluno.getNome();
 		//segundo ?
 		obj[1] = aluno.getCpf();
-		obj[2] = id;
+		//terceiro ?
+		obj[2] = aluno.getColegio();
+		//quarto ?
+		obj[3] = aluno.getEmail();
+		obj[4] = id;
+		
 		jdbc.update(sql, obj);
 	}
 }

@@ -7,7 +7,9 @@
 <body>
      <form action="#" th:action="@{/professor}" method=post th:object="${professor}">
        Nome do Professor: <input type="text" th:field="*{nome}"><br>
-       CPF: <input type="text" th:field="*{cpf}">
+       CPF: <input type="text" th:field="*{cpf}"><br>
+       Código do Colégio: <input type="text" th:field="*{colegio}"><br>
+       E-mail: <input type="text" th:field="*{email}">
        <input type="submit" value="Cadastrar">
      </form>
      <div><a th:href="@{/professores}">Voltar</a></div>

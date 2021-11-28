@@ -43,6 +43,8 @@ public class AlunoController {
 		Map<String, Object> mapa = cs.getAluno(id);
 		model.addAttribute("nome", mapa.get("nome"));
 		model.addAttribute("cpf", mapa.get("cpf"));
+		model.addAttribute("colegio", mapa.get("colegio"));
+		model.addAttribute("email", mapa.get("email"));
 		model.addAttribute("id", id);
 		return "perfil";
 		
@@ -67,7 +69,7 @@ public class AlunoController {
 	public String formAtualizar(@PathVariable("id") int id, Model model) {
 		AlunoService cdao = context.getBean(AlunoService.class);
 		Map<String,Object> regs = cdao.getAluno(id);
-		Aluno cli = new Aluno(id,regs.get("nome").toString(),regs.get("cpf").toString());
+		Aluno cli = new Aluno(id,regs.get("nome").toString(),regs.get("cpf").toString(),regs.get("colegio").toString(),regs.get("email").toString());
 		model.addAttribute("aluno",cli);
 		model.addAttribute("id",id);
 		return "formupdaluno";

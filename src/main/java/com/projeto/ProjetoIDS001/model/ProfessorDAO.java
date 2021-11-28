@@ -23,13 +23,17 @@ public class ProfessorDAO {
 	}
 
 	public void inserirProfessor(Professor professor) {
-		String sql = "INSERT INTO professor(nome,cpf)" +
-	                 " VALUES (?,?)";
-		Object[] obj = new Object[2];
+		String sql = "INSERT INTO professor(nome,cpf,colegio,email)" +
+	                 " VALUES (?,?,?,?)";
+		Object[] obj = new Object[4];
 		//primeiro ?
 		obj[0] = professor.getNome();
 		//segundo ?
 		obj[1] = professor.getCpf();
+		//terceiro ?
+		obj[2] = professor.getColegio();
+		//quarto ?
+		obj[3] = professor.getEmail();
 		jdbc.update(sql, obj);
 	}
 	
@@ -55,14 +59,18 @@ public class ProfessorDAO {
     
     public void atualizarProfessor(int id, Professor professor) {
 		String sql = "UPDATE professor "
-				+    "SET nome = ?, cpf = ? "
+				+    "SET nome = ?, cpf = ?, colegio = ?, email = ?"
 				+    "WHERE id = ?" ;
-		Object[] obj = new Object[3];
+		Object[] obj = new Object[5];
 		//primeiro ?
 		obj[0] = professor.getNome();
 		//segundo ?
 		obj[1] = professor.getCpf();
-		obj[2] = id;
+		//terceiro ?
+		obj[2] = professor.getColegio();
+		//terceiro ?
+		obj[3] = professor.getEmail();
+		obj[4] = id;
 		jdbc.update(sql, obj);
 	}
 }
