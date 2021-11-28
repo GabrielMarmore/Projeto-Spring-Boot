@@ -43,6 +43,7 @@ public class FuncionarioController {
 		Map<String, Object> mapa = cs.getFuncionario(id);
 		model.addAttribute("nome", mapa.get("nome"));
 		model.addAttribute("cpf", mapa.get("cpf"));
+		model.addAttribute("colegio", mapa.get("colegio"));
 		model.addAttribute("id", id);
 		return "perfil";
 		
@@ -67,7 +68,7 @@ public class FuncionarioController {
 	public String formAtualizar(@PathVariable("id") int id, Model model) {
 		FuncionarioService cdao = context.getBean(FuncionarioService.class);
 		Map<String,Object> regs = cdao.getFuncionario(id);
-		Funcionario cli = new Funcionario(id,regs.get("nome").toString(),regs.get("cpf").toString());
+		Funcionario cli = new Funcionario(id,regs.get("nome").toString(),regs.get("cpf").toString(),regs.get("colegio").toString());
 		model.addAttribute("funcionario",cli);
 		model.addAttribute("id",id);
 		return "formupdfuncionario";

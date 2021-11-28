@@ -23,13 +23,15 @@ public class FuncionarioDAO {
 	}
 
 	public void inserirFuncionario(Funcionario funcionario) {
-		String sql = "INSERT INTO funcionario(nome,cpf)" +
-	                 " VALUES (?,?)";
-		Object[] obj = new Object[2];
+		String sql = "INSERT INTO funcionario(nome,cpf,colegio)" +
+	                 " VALUES (?,?,?)";
+		Object[] obj = new Object[3];
 		//primeiro ?
 		obj[0] = funcionario.getNome();
 		//segundo ?
 		obj[1] = funcionario.getCpf();
+		//terceiro ?
+		obj[2] = funcionario.getColegio();
 		jdbc.update(sql, obj);
 	}
 	
@@ -55,14 +57,16 @@ public class FuncionarioDAO {
     
     public void atualizarFuncionario(int id, Funcionario funcionario) {
 		String sql = "UPDATE funcionario "
-				+    "SET nome = ?, cpf = ? "
+				+    "SET nome = ?, cpf = ?, colegio = ? "
 				+    "WHERE id = ?" ;
-		Object[] obj = new Object[3];
+		Object[] obj = new Object[4];
 		//primeiro ?
 		obj[0] = funcionario.getNome();
 		//segundo ?
 		obj[1] = funcionario.getCpf();
-		obj[2] = id;
+		// terceiro ?
+		obj[2] = funcionario.getColegio();
+		obj[3] = id;
 		jdbc.update(sql, obj);
 	}
 }

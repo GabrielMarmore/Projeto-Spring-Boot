@@ -43,6 +43,8 @@ public class ProfessorController {
 		Map<String, Object> mapa = cs.getProfessor(id);
 		model.addAttribute("nome", mapa.get("nome"));
 		model.addAttribute("cpf", mapa.get("cpf"));
+		model.addAttribute("colegio", mapa.get("colegio"));
+		model.addAttribute("email", mapa.get("email"));
 		model.addAttribute("id", id);
 		return "perfil";
 		
@@ -67,7 +69,7 @@ public class ProfessorController {
 	public String formAtualizar(@PathVariable("id") int id, Model model) {
 		ProfessorService cdao = context.getBean(ProfessorService.class);
 		Map<String,Object> regs = cdao.getProfessor(id);
-		Professor cli = new Professor(id,regs.get("nome").toString(),regs.get("cpf").toString());
+		Professor cli = new Professor(id,regs.get("nome").toString(),regs.get("cpf").toString(),regs.get("colegio").toString(),regs.get("email").toString());
 		model.addAttribute("professor",cli);
 		model.addAttribute("id",id);
 		return "formupdprofessor";
