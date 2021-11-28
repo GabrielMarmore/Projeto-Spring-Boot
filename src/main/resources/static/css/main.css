@@ -108,10 +108,13 @@ padding: 5px 10px;
 	color: #fff;
 }
 
-#index a{
+#index a, footer p>a{
 	color: #fff;
 }
 
+footer p>a:hover{
+	 text-decoration: underline;
+}
 #index a:hover{
 	background-color: var(--cor2);
 	color: var(--cor0);
@@ -162,4 +165,17 @@ ul>div>li>a{
 	border-radius: 5px;
 	border: 1px solid #fff;
 	transition: 0.5s;
+}
+footer{
+	background-color: var(--cor0);
+	color: #fff;
+	font-size: 1.2rem;
+	font-style: italic;
+	text-align: center;
+
+	box-shadow: 0 0 10px rgb(0,0,0,0.3);
+	padding: 15px 0;	
+}
+footer p{
+	margin: 5px;
 }
