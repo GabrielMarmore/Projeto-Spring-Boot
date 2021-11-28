@@ -19,13 +19,32 @@
    			</ul>
         </nav>
     </header>
-  <h2>Acesso Tabelas</h2>
-  <ul>
-   <li><a th:href="@{/alunos}">Alunos</a></li>
-   <li><a th:href="@{/professores}">Professores</a></li>
-   <li><a th:href="@{/funcionarios}">Funcionários</a></li>
-   <li><a th:href="@{/escolas}">Escolas</a></li>
-  </ul>
-  
+<main id="index">
+	<div>
+  		<h2>Acesso Tabelas</h2>
+  		<ul>
+  			<div>
+   				<li><a th:href="@{/alunos}">Alunos</a></li>
+   				<li><a th:href="@{/professores}">Professores</a></li>
+   			</div>
+   			<div>
+   				<li><a th:href="@{/funcionarios}">Funcionários</a></li>
+   				<li><a th:href="@{/escolas}">Escolas</a></li>
+   			</div>
+  		</ul>
+  		
+  		<h2>Cadastrar</h2>
+  		<ul>
+  			<div>
+   				<li><a th:href="@{/aluno}">Alunos</a></li>
+   				<li><a th:href="@{/professore}">Professores</a></li>
+   			</div>
+   			<div>
+   				<li><a th:href="@{/funcionario}">Funcionários</a></li>
+   				<li><a th:href="@{/escola}">Escolas</a></li>
+   			</div>
+  		</ul>
+	</div>
+</main>
 </body>
 </html>
