@@ -17,6 +17,7 @@
 		</ul>
     </nav>
 </header>
+<main>
     <form action="#" th:action="@{'/upd/' + ${id}}" method=post th:object="${aluno}">
     	Nome: <input type="text" th:field="*{nome}"><br>
     	CPF: <input type="text" th:field="*{cpf}"><br>
@@ -24,6 +25,7 @@
     	E-mail: <input type="text" th:field="*{email}">
     	<input type="submit" value="Editar">
     </form>
+</main>
 <footer>
 	<p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
     <p><a href="https://github.com/WilsonIglesias" target="_blank">@Wilson</a></p>

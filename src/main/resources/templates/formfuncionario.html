@@ -17,6 +17,7 @@
 		</ul>
     </nav>
 </header>
+<main>
      <form action="#" th:action="@{/funcionario}" method=post th:object="${funcionario}">
        Nome: <input type="text" th:field="*{nome}"><br>
        CPF: <input type="text" th:field="*{cpf}"><br>
@@ -24,6 +25,7 @@
        <input type="submit" value="Cadastrar">
      </form>
      <div><a th:href="@{/funcionarios}">Voltar</a></div>
+</main>
 <footer>
 	<p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
     <p><a href="https://github.com/WilsonIglesias" target="_blank">@Wilson</a></p>

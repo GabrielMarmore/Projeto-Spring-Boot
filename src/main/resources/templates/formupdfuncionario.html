@@ -17,12 +17,14 @@
 		</ul>
     </nav>
 </header>
+<main>
     <form action="#" th:action="@{'/updfunc/' + ${id}}" method=post th:object="${funcionario}">
     	Nome: <input type="text" th:field="*{nome}"><br>
     	CPF: <input type="text" th:field="*{cpf}"><br>
     	Código do Colégio: <input type="text" th:field="*{colegio}">
     	<input type="submit" value="Editar">
     </form>
+</main>
 <footer>
 	<p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
     <p><a href="https://github.com/WilsonIglesias" target="_blank">@Wilson</a></p>

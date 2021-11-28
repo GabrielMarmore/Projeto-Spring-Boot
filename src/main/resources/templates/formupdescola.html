@@ -17,11 +17,13 @@
 		</ul>
     </nav>
 </header>
+<main>
     <form action="#" th:action="@{'/updescola/' + ${id}}" method=post th:object="${escola}">
     	Nome: <input type="text" th:field="*{nome}"><br>
     	Código da escola: <input type="text" th:field="*{codigo}">
     	<input type="submit" value="Editar">
     </form>
+</main>
 <footer>
 	<p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
     <p><a href="https://github.com/WilsonIglesias" target="_blank">@Wilson</a></p>
