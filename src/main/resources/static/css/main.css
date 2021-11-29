@@ -16,7 +16,6 @@
 }
 body ul,li {
 	font-size: larger;
-
 }
 p{
 	font-size: 1.2rem;
@@ -54,12 +53,13 @@ header h1{
 	text-shadow: 0px 1px 2px var(--cor2);
 }
 
-header h1>a{
+header a>h1{
 	color: #fff;
 }
 
-header h1>a:hover{
-	color: var(--cor4);
+header a>h1:hover{
+	color: var(--cor2);
+	text-shadow: 0;
 }
 
 nav{
@@ -93,8 +93,12 @@ padding: 5px 10px;
 	/*responsividade*/
 	max-width: 600px;
 	min-width: 280px;
+	min-height: 500px;
 	margin: auto;
-
+	
+	align-items: center;
+	text-align: center;
+	
 	margin-bottom: 40px;
 	margin-top: 40px;
 	
@@ -123,9 +127,9 @@ footer p>a:hover{
 
 #index>div{
 	width: 100%;
-	margin: 0 5%;
 	
 	align-items: center;
+	text-align: center;
 	border-radius: 15px;
 	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 	
@@ -178,4 +182,39 @@ footer{
 }
 footer p{
 	margin: 5px;
+}
+
+main{
+    max-width: 800px;
+    min-width: 600px;
+    min-height: 500px;
+    margin: auto;
+
+    padding: 15px;
+}
+table, table tr, table th, table td{
+    border: 1px solid #000;
+    padding: 5px;
+}
+table{
+    margin: auto;
+}
+input{
+    width:100%;
+    margin: 3px 0;
+    padding: 10px;
+}
+input[type="submit"]{
+    width: auto;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 6px;
+}
+.center{
+	text-align: center;
+}
+
+input[type="submit"]:hover{
+	cursor: pointer;
 }

@@ -4,8 +4,21 @@
    <title>Cadastro de Alunos</title>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
    <script th:src="@{js/main.js}"></script>
+   <link rel="stylesheet" th:href="@{css/main.css}">
 </head>
 <body>
+<header class="container">
+    <a th:href="@{/}"><h1>Projeto Captação de Alunos</h1></a>
+    <nav>
+        <ul id="menu">
+			<li><a th:href="@{/alunos}">Alunos</a></li>
+			<li><a th:href="@{/professores}">Professores</a></li>
+			<li><a th:href="@{/funcionarios}">Funcionários</a></li>
+			<li><a th:href="@{/escolas}">Escolas</a></li>
+		</ul>
+    </nav>
+</header>
+<main>
      <form onsubmit="return validaForm(this)" action="#" th:action="@{/aluno}" method=post th:object="${aluno}">
        Nome do aluno: <input id="nome" type="text" th:field="*{nome}"><br>
        CPF: <input id="cpf" type="text" th:field="*{cpf}"><br>
@@ -14,5 +27,10 @@
        <input type="submit" value="Cadastrar">
      </form>
      <div><a th:href="@{/alunos}">Voltar</a></div>
- </body>
- </html>
+</main>
+<footer>
+	<p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
+    <p><a href="https://github.com/WilsonIglesias" target="_blank">@Wilson</a></p>
+</footer>
+</body>
+</html>
