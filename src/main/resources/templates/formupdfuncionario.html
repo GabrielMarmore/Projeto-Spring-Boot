@@ -4,6 +4,7 @@
     <title>Atualização de funcionários</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" th:href="@{/css/main.css}">
+    <script th:src="@{js/main.js}"></script>
 </head>
 <body>
 <header class="container">
@@ -18,16 +19,16 @@
     </nav>
 </header>
 <main>
-    <form action="#" th:action="@{'/updfunc/' + ${id}}" method=post th:object="${funcionario}">
-    	Nome: <input type="text" th:field="*{nome}"><br>
-    	CPF: <input type="text" th:field="*{cpf}"><br>
-    	Código do Colégio: <input type="text" th:field="*{colegio}">
+    <form onsubmit="return validaForm(this)" action="#" th:action="@{'/updfunc/' + ${id}}" method=post th:object="${funcionario}">
+    	Nome: <input id="nome" type="text" th:field="*{nome}"><br>
+    	CPF: <input id="cpf" type="text" th:field="*{cpf}"><br>
+    	Código do Colégio: <input id="cdcolegio" type="text" th:field="*{colegio}">
     	<input type="submit" value="Editar">
     </form>
     <div><a th:href="@{/funcionarios}">Voltar</a></div>
 </main>
 <footer>
-	<p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
+	  <p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
     <p><a href="https://github.com/WilsonIglesias" target="_blank">@Wilson</a></p>
 </footer>
 </body>

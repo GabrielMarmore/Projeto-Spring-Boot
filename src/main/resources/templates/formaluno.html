@@ -3,6 +3,7 @@
 <head>
    <title>Cadastro de Alunos</title>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <script th:src="@{js/main.js}"></script>
    <link rel="stylesheet" th:href="@{css/main.css}">
 </head>
 <body>
@@ -18,11 +19,11 @@
     </nav>
 </header>
 <main>
-     <form action="#" th:action="@{/aluno}" method=post th:object="${aluno}">
-       Nome do aluno: <input type="text" th:field="*{nome}"><br>
-       CPF: <input type="text" th:field="*{cpf}"><br>
-       Código do Colégio: <input type="text" th:field="*{colegio}"><br>
-       E-mail: <input type="text" th:field="*{email}">
+     <form onsubmit="return validaForm(this)" action="#" th:action="@{/aluno}" method=post th:object="${aluno}">
+       Nome do aluno: <input id="nome" type="text" th:field="*{nome}"><br>
+       CPF: <input id="cpf" type="text" th:field="*{cpf}"><br>
+       Código do Colégio: <input id="cdcolegio" type="text" th:field="*{colegio}"><br>
+       E-mail: <input id="email" type="text" th:field="*{email}">
        <input type="submit" value="Cadastrar">
      </form>
      <div><a th:href="@{/alunos}">Voltar</a></div>

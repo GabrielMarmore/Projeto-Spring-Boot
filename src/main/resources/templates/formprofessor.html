@@ -4,6 +4,7 @@
    <title>Cadastro de Professores</title>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
    <link rel="stylesheet" th:href="@{css/main.css}">
+   <script th:src="@{js/main.js}"></script>
 </head>
 <body>
 <header class="container">
@@ -18,17 +19,17 @@
     </nav>
 </header>
 <main>
-     <form action="#" th:action="@{/professor}" method=post th:object="${professor}">
-       Nome do Professor: <input type="text" th:field="*{nome}"><br>
-       CPF: <input type="text" th:field="*{cpf}"><br>
-       Código do Colégio: <input type="text" th:field="*{colegio}"><br>
-       E-mail: <input type="text" th:field="*{email}">
+     <form onsubmit="return validaForm(this)" action="#" th:action="@{/professor}" method=post th:object="${professor}">
+       Nome do Professor: <input id="nome" type="text" th:field="*{nome}"><br>
+       CPF: <input id="cpf" type="text" th:field="*{cpf}"><br>
+       Código do Colégio: <input id="cdcolegio" type="text" th:field="*{colegio}"><br>
+       E-mail: <input id="email" type="text" th:field="*{email}">
        <input type="submit" value="Cadastrar">
      </form>
      <div><a th:href="@{/professores}">Voltar</a></div>
 </main>
 <footer>
-	<p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
+	  <p><a href="https://github.com/GabrielMarmore" target="_blank">@Mármore</a></p>
     <p><a href="https://github.com/WilsonIglesias" target="_blank">@Wilson</a></p>
 </footer>
  </body>
